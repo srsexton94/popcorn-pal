@@ -1,0 +1,35 @@
+.card {
+  border-radius: 1rem;
+  background-color: var(--black-shade);
+  height: 18rem;
+  width: 12rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.card img,
+.no-poster {
+  height: 12rem;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+.star {
+  color: rgb(255, 225, 0);
+  margin-right: 0.25rem;
+}

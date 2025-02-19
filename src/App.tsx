@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Search } from "./components";
+import { Card, Search } from "./components";
+import Movie from "./models/Movie";
 import "./App.css";
 import "./variables.css";
 
@@ -16,12 +17,12 @@ const API_OPTIONS = {
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [movieList, setMovieList] = useState([] as { title: string, id: number }[]);
+  const [movieList, setMovieList] = useState([] as Movie[]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchMovies = async () => {
     setIsLoading(true);
-    setErrorMessage('');
+    setErrorMessage("");
 
     try {
       const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
@@ -62,15 +63,16 @@ function App() {
       <main>
         <Search setSearchTerm={setSearchTerm} />
         <section>
-          <h2>All Movies: {searchTerm}</h2>
           {isLoading ? (
             <p>Loading...</p>
           ) : errorMessage ? (
             <p>{errorMessage}</p>
           ) : (
             <ul>
-              {movieList.map(movie => (
-                <li key={movie.id}>{movie.title}</li>
+              {movieList.map((movie) => (
+                <li key={movie.id}>
+                  <Card movie={movie} />
+                </li>
               ))}
             </ul>
           )}
