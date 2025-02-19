@@ -9,7 +9,9 @@ function Card({ movie: { title, poster_path, vote_average, release_date } }: { m
       {poster_path ? (
         <img src={src} alt={`${title} Movie Poster`} />
       ) : (
-        <p className="no-poster">No Movie Poster</p>
+        <div className="no-poster">
+          <p>No Movie Poster</p>
+        </div>
       )}
       <h2 className="title">{ title }</h2>
       <div className="content">
