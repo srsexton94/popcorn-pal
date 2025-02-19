@@ -15,6 +15,20 @@ function App() {
       <main>
         <Search />
       </main>
+      <footer>
+        <p>Created by Sam R. Sexton</p>
+        <ul>
+          <li>
+            <a href="https://srsexton94.github.io/">Portfolio</a>
+          </li>
+          <li>
+            <a href="https://github.com/srsexton94">Github</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/sam-sexton/">LinkedIn</a>
+          </li>
+        </ul>
+      </footer>
     </>
   );
 }
