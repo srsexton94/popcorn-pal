@@ -19,7 +19,7 @@ main ul {
   justify-content: center;
   list-style: none;
   width: 80vw;
-  margin: auto;
+  margin: 0 auto 2rem;
 }
 
 footer {
