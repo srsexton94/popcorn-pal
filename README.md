@@ -9,3 +9,7 @@ This is a movie search application built in React with TypeScript, initialized w
 ## Icons
 
 For Icons in this project I either used emojis or [react-icons](https://react-icons.github.io/react-icons/)
+
+## API
+
+For this project I used the [discover-movie api from TMDB](https://developer.themoviedb.org/reference/discover-movie) and followed the implementation of [JavaScript Mastery's React Course](https://www.youtube.com/watch?v=dCLhUialKPQ) (the UI was built independently of the tutorial)
