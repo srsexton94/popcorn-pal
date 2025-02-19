@@ -2,10 +2,17 @@ import React from "react";
 import "./Search.css";
 import { BsSearch } from "react-icons/bs";
 
-function Search() {
-  const onSubmit = (event: React.FormEvent) => {
+interface SearchProps {
+  setSearchTerm: (newTerm: string) => void;
+}
+
+function Search({ setSearchTerm }: SearchProps) {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("hit it!");
+    const target = event.target as typeof event.target & {
+      search: { value: string };
+    };
+    setSearchTerm(target.search.value);
   };
 
   return (
