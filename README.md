@@ -2,6 +2,8 @@
 
 This is a movie search application built in React with TypeScript, initialized with Vite.
 
+![screen shot of the Popcorn Pal app](public/popcornpal_2-2025.png)
+
 ## Commands
 - Development environment: `npm run dev`
 - Deployment: `npm run deploy`
