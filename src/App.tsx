@@ -79,7 +79,7 @@ function App() {
               )}
             </ul>
           ) : errorMessage ? (
-            <p>{errorMessage}</p>
+            <p id="page-error" role="alert">{errorMessage}</p>
           ) : (
             <ul>
               {movieList.map((movie) => (

@@ -20,7 +20,7 @@ function Search({ setSearchTerm }: SearchProps) {
       <input
         type="search"
         role="searchbox"
-        aria-description="search results will appear below"
+        aria-describedby="page-error"
         id="search"
         placeholder="  "
         onChange={(e) => setSearchTerm(e.target.value)}
