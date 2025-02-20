@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Search } from "./components";
+import { Card, LoadingCard, Search } from "./components";
 import Movie from "./models/Movie";
 import { useDebounce } from "react-use";
 import "./App.css";
@@ -71,7 +71,13 @@ function App() {
         <Search setSearchTerm={setSearchTerm} />
         <section>
           {isLoading ? (
-            <p>Loading...</p>
+            <ul>
+              {new Array(20).fill(
+                <li>
+                  <LoadingCard />
+                </li>
+              )}
+            </ul>
           ) : errorMessage ? (
             <p>{errorMessage}</p>
           ) : (

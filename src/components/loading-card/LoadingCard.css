@@ -1,0 +1,21 @@
+.loading-card {
+  border-radius: 1rem;
+  background-color: var(--black-shade);
+  height: 18rem;
+  width: 12rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--black-shade);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    background-color: var(--black-shade);
+  }
+}
