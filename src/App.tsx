@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Search } from "./components";
 import Movie from "./models/Movie";
+import { useDebounce } from "react-use";
 import "./App.css";
 import "./variables.css";
 
@@ -19,6 +20,9 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [movieList, setMovieList] = useState([] as Movie[]);
   const [isLoading, setIsLoading] = useState(false);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+
+  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
 
   const fetchMovies = async (query = "") => {
     setIsLoading(true);
@@ -28,7 +32,7 @@ function App() {
       const endpoint = query
         ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
         : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
-      
+
       const response = await fetch(endpoint, API_OPTIONS);
 
       if (!response.ok) {
@@ -50,8 +54,8 @@ function App() {
   };
 
   useEffect(() => {
-    fetchMovies(searchTerm);
-  }, [searchTerm]);
+    fetchMovies(debouncedSearchTerm);
+  }, [debouncedSearchTerm]);
 
   return (
     <>

@@ -23,6 +23,7 @@ function Search({ setSearchTerm }: SearchProps) {
         aria-description="search results will appear below"
         id="search"
         placeholder="  "
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <label htmlFor="search">Search for movies</label>
       <button aria-label="Submit Search">
