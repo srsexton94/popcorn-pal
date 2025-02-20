@@ -25,6 +25,8 @@
 .title {
   font-size: 1.25rem;
   margin-bottom: 0.25rem;
+  height: 3rem;
+  overflow-y: clip;
 }
 
 .content {
